@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed Adilshan, CMA | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1624;--bg2:#142238;--ink:#eef1f5;--mute:#9fb0c6;--acc:#3fc3ad;--sand:#e7d9b8;--line:rgba(255,255,255,.12);--card:rgba(20,34,56,.72);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3efe6;--bg2:#e9e2d2;--ink:#14213a;--mute:#52627c;--acc:#0b7d6c;--sand:#8a6d2b;--line:rgba(20,33,58,.16);--card:rgba(255,252,245,.8);color-scheme:light}}
+:root[data-theme="light"]{--bg:#f3efe6;--bg2:#e9e2d2;--ink:#14213a;--mute:#52627c;--acc:#0b7d6c;--sand:#8a6d2b;--line:rgba(20,33,58,.16);--card:rgba(255,252,245,.8);color-scheme:light}
+:root[data-theme="dark"]{--bg:#0d1624;--bg2:#142238;--ink:#eef1f5;--mute:#9fb0c6;--acc:#3fc3ad;--sand:#e7d9b8;--line:rgba(255,255,255,.12);--card:rgba(20,34,56,.72)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+main,nav{position:relative;z-index:1}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;background:linear-gradient(var(--bg),transparent)}
+nav b{font:400 1.4rem 'Instrument Serif',Georgia,serif}
+nav div{display:flex;gap:18px;font-size:.9rem}
+nav a{color:var(--mute);text-decoration:none}nav a:hover,nav a:focus-visible{color:var(--acc)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5vw 9vh}
+.hero h1{font:400 clamp(3rem,9vw,8rem)/.95 'Instrument Serif',Georgia,serif;margin:0 0 .3em;letter-spacing:-.02em}
+.hero p{max-width:34em;color:var(--mute);font-size:1.1rem;margin:0 0 1.6em}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:40px;border:1px solid var(--acc);color:var(--ink);text-decoration:none;font-weight:700;background:transparent;transition:transform .2s,background .2s}
+.btn.f{background:var(--acc);color:#06201b}
+.btn:hover{transform:translateY(-3px)}
+.stats{display:flex;gap:clamp(20px,5vw,56px);flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid var(--line)}
+.stats div{min-width:110px}.stats strong{display:block;font:400 2.4rem 'Instrument Serif',serif;color:var(--sand)}.stats span{font-size:.85rem;color:var(--mute)}
+section{padding:12vh 5vw;max-width:1180px;margin:0 auto}
+h2{font:400 clamp(2rem,5vw,3.4rem)/1.05 'Instrument Serif',Georgia,serif;margin:0 0 1em}
+.panel{background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:28px}
+.tilt{transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
+.job{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-bottom:22px}
+@media(max-width:760px){.job{grid-template-columns:1fr}nav div{display:none}}
+.job h3{margin:0;font:400 1.6rem 'Instrument Serif',serif}.job small{color:var(--mute);display:block}
+.job h4{margin:1.2em 0 .3em;color:var(--acc);font-size:.95rem}
+.job ul{margin:0;padding-left:1.1em;color:var(--mute)}.job li{margin:.35em 0}.job li::marker{color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;perspective:1000px}
+.grid .panel strong{display:block;font:400 2.6rem 'Instrument Serif',serif;color:var(--sand);line-height:1}
+.grid .panel p{margin:.6em 0 0;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{padding:8px 16px;border:1px solid var(--line);border-radius:30px;background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:.92rem;transition:border-color .2s,transform .2s}
+.tags span:hover{border-color:var(--acc);transform:translateY(-3px)}
+.tags+h3{margin:2em 0 .8em;font:400 1.5rem 'Instrument Serif',serif}
+.bars{display:grid;gap:14px}.bar b{display:flex;justify-content:space-between;font-weight:500;font-size:.95rem}
+.bar i{display:block;height:6px;border-radius:6px;background:var(--line);margin-top:6px;overflow:hidden}
+.bar i::after{content:"";display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--sand));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.bar.on i::after{width:var(--w)}
+footer{padding:12vh 5vw 8vh;text-align:center;max-width:900px;margin:0 auto}
+footer h2{font-size:clamp(2.4rem,7vw,5rem)}
+footer p{color:var(--mute)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.hero{justify-content:center;padding-top:110px}
+.hero-in{display:grid;grid-template-columns:1.25fr .75fr;gap:4vw;align-items:center}
+@media(max-width:860px){.hero-in{grid-template-columns:1fr}.photo-wrap{order:-1;justify-self:center}}
+.hero h1{font-size:clamp(3rem,8vw,7rem);background:linear-gradient(100deg,var(--ink) 40%,var(--sand));-webkit-background-clip:text;background-clip:text;color:transparent}
+.photo-wrap{position:relative;width:min(320px,70vw);aspect-ratio:1;perspective:900px}
+.photo{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;cursor:pointer;overflow:hidden;background:radial-gradient(circle at 30% 25%,var(--bg2),var(--bg));border:1px solid var(--line);box-shadow:0 30px 80px -20px rgba(63,195,173,.45),inset 0 0 40px rgba(63,195,173,.12)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo #pini{font:400 5.5rem 'Instrument Serif',serif;color:var(--sand)}
+.photo #phint{position:absolute;bottom:12%;font-style:normal;font-size:.8rem;color:var(--mute);opacity:0;transition:opacity .2s;background:var(--card);padding:4px 12px;border-radius:20px}
+.photo:hover #phint,.photo:focus-visible #phint{opacity:1}
+.ring{position:absolute;inset:-2px;border-radius:50%;background:conic-gradient(from 0deg,transparent,var(--acc),transparent 35%,var(--sand),transparent 70%);animation:spin 9s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));z-index:2;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip{position:absolute;padding:8px 14px;border-radius:30px;background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);font-size:.82rem;font-weight:700;animation:bob 5s ease-in-out infinite}
+.c1{top:6%;right:-6%}.c2{bottom:8%;left:-8%;animation-delay:-2.5s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.stats{margin-top:56px}
+.marq{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--line);background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:14px 0}
+.marq div{display:flex;gap:46px;width:max-content;animation:mq 40s linear infinite;font:400 1.5rem 'Instrument Serif',serif;color:var(--mute)}
+.marq span::after{content:"◆";color:var(--acc);font-size:.6rem;margin-left:46px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+.live{color:var(--acc);font-weight:700;font-size:.85rem}
+#experience{position:relative}
+.panel{position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(63,195,173,.16),transparent 70%);opacity:0;transition:opacity .25s;pointer-events:none}
+.panel:hover::before{opacity:1}
+.job{border-left:3px solid var(--acc)}
+.cursor{position:fixed;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;background:radial-gradient(circle,rgba(63,195,173,.12),transparent 65%);pointer-events:none;z-index:0;will-change:transform}
+@media(prefers-reduced-motion:reduce){.ring,.chip,.marq div{animation:none}}
+#gl{opacity:.9}
+main,footer,nav{position:relative;z-index:2}
+.hero-in{position:relative;z-index:3}
+@media(min-width:861px){.hero-txt{margin-left:0}.hero-in{grid-template-columns:1fr 1fr}.hero-txt{grid-column:2}.photo-wrap{grid-column:1;grid-row:1;justify-self:center;margin-left:0}}
+section .panel,.tags span,.job{background:var(--card)}
+:root{--card:rgba(16,28,48,.86)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--card:rgba(255,252,245,.9)}}
+
+.hero h1{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--ink);perspective:700px}
+.hero h1 i{display:inline-block;font-style:normal;opacity:0;transform:rotateX(-100deg) translateY(40px);transform-origin:50% 100%;animation:ltr .9s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--d)*45ms + 250ms)}
+.hero h1 .l2{color:var(--sand)}
+@keyframes ltr{to{opacity:1;transform:none}}
+.hero-txt p,.hero-txt .cta{opacity:0;animation:fadeup .9s ease forwards;animation-delay:1.3s}
+.hero-txt .cta{animation-delay:1.5s}
+.photo-wrap{opacity:0;animation:pop 1.2s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:.3s}
+.stats>div{opacity:0;animation:fadeup .8s ease forwards}
+.stats>div:nth-child(1){animation-delay:1.7s}.stats>div:nth-child(2){animation-delay:1.8s}.stats>div:nth-child(3){animation-delay:1.9s}.stats>div:nth-child(4){animation-delay:2s}.stats>div:nth-child(5){animation-delay:2.1s}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotate(-12deg)}to{opacity:1;transform:none}}
+.rv:not(.in){opacity:0}
+.rv.in{animation:rise .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:perspective(900px) translateY(50px) rotateX(16deg)}to{opacity:1;transform:none}}
+.tags span.rv.in{animation-duration:.6s}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--acc),var(--sand));transform:scaleX(0);transform-origin:0 0;z-index:10}
+.btn{position:relative;overflow:hidden}
+.btn.f::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.5s ease-in-out infinite 2.5s}
+@keyframes shine{to{left:130%}}
+h2{position:relative;display:inline-block}
+h2::after{content:"";display:block;height:3px;width:0;margin-top:10px;background:linear-gradient(90deg,var(--acc),var(--sand));border-radius:3px;transition:width 1s .2s cubic-bezier(.2,.8,.2,1)}
+h2.in::after{width:100%}
+@media(prefers-reduced-motion:reduce){.hero h1 i,.hero-txt p,.hero-txt .cta,.photo-wrap,.stats>div{opacity:1;animation:none;transform:none}.rv:not(.in){opacity:1}.rv.in{animation:none}.btn.f::after{animation:none}}
+
+footer{max-width:1000px}
+.ct{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:34px;perspective:1000px;text-align:left}
+.cc{display:flex;flex-direction:column;gap:4px;padding:26px;border-radius:20px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);text-decoration:none;transition:border-color .2s,box-shadow .3s}
+.cc:hover,.cc:focus-visible{border-color:var(--acc);box-shadow:0 20px 50px -20px rgba(63,195,173,.6)}
+.cc svg{color:var(--acc);margin-bottom:10px}
+.cc b{font:400 1.7rem 'Instrument Serif',serif}
+.cc span{color:var(--mute);font-size:.95rem;overflow-wrap:anywhere}
+.cc em{font-style:normal;color:var(--acc);font-weight:700;font-size:.85rem;margin-top:10px}
+.fab{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#06201b;box-shadow:0 10px 30px rgba(63,195,173,.5);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 10px 30px rgba(63,195,173,.5),0 0 0 14px rgba(63,195,173,0)}0%{box-shadow:0 10px 30px rgba(63,195,173,.5),0 0 0 0 rgba(63,195,173,.5)}}
+@media(prefers-reduced-motion:reduce){.fab{animation:none}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div class="cursor" id="cur-glow" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<nav><b>M. Adilshan</b><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#results">Results</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+<main>
+<header class="hero">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <h1 aria-label="Mohamed Adilshan, CMA"><span class="l1" aria-hidden="true"><i style="--d:0">M</i><i style="--d:1">o</i><i style="--d:2">h</i><i style="--d:3">a</i><i style="--d:4">m</i><i style="--d:5">e</i><i style="--d:6">d</i></span><br><span class="l2" aria-hidden="true"><i style="--d:7">A</i><i style="--d:8">d</i><i style="--d:9">i</i><i style="--d:10">l</i><i style="--d:11">s</i><i style="--d:12">h</i><i style="--d:13">a</i><i style="--d:14">n</i><i style="--d:15">,</i><i style="--d:16">&nbsp;</i><i style="--d:17">C</i><i style="--d:18">M</i><i style="--d:19">A</i></span></h1>
+      <p>Financial accounting professional in Dubai. I turn high-volume transactions into accurate reports, clean VAT filings and audit-ready books.</p>
+      <div class="cta"><a class="btn f" href="#contact">Contact me</a><a class="btn" id="cv" href="CV.pdf" download="Mohamed_Adilshan_CV.pdf">Download CV (PDF)</a></div>
+    </div>
+    <div class="photo-wrap"><div class="photo tilt" id="photo" tabindex="0" role="button" aria-label="Profile photo. Press to add or change your photo">
+      <div class="ring"></div>
+      <img id="pimg" alt="Mohamed Adilshan" hidden>
+      <span id="pini">MA</span>
+      <em id="phint">Add photo</em>
+      <input type="file" id="pfile" accept="image/*" hidden>
+    </div>
+    <div class="chip c1">CMA · IMA USA</div><div class="chip c2">UAE VAT · IFRS</div></div>
+  </div>
+  <div class="stats">
+    <div><strong id="exp" data-n="4" data-s="y">0</strong><span id="expl">total experience (auto-calculated)</span></div>
+    <div><strong id="cur" data-n="2" data-s="y">0</strong><span>in current role at Gulf Cars Auction</span></div>
+    <div><strong data-n="5" data-s="M+">0</strong><span>AED monthly revenue handled</span></div>
+    <div><strong data-n="700" data-s="+">0</strong><span>inventory vehicles costed</span></div>
+    <div><strong data-n="150" data-s="+">0</strong><span>employees on payroll</span></div>
+  </div>
+</header>
+<div class="marq" aria-hidden="true"><div><span>Month-end close</span><span>UAE VAT</span><span>IFRS and GAAP</span><span>Accounts payable</span><span>Accounts receivable</span><span>WPS payroll</span><span>Inventory costing</span><span>Bank reconciliation</span><span>MIS reporting</span><span>Power BI</span><span>Month-end close</span><span>UAE VAT</span><span>IFRS and GAAP</span><span>Accounts payable</span><span>Accounts receivable</span><span>WPS payroll</span><span>Inventory costing</span><span>Bank reconciliation</span><span>MIS reporting</span><span>Power BI</span></div></div>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="panel tilt"><p style="margin:0;max-width:62ch">CMA-certified finance professional with 4+ years of experience in financial accounting, budgeting, forecasting, VAT compliance and month-end closing. Skilled in financial reporting, MIS, variance analysis, AP/AR, payroll and reconciliation across trading and construction sectors. Proficient in Excel, ERP systems, GAAP, IFRS and UAE VAT and corporate tax.</p></div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="job panel tilt">
+    <div><h3>Accountant</h3><small>Gulf Cars Auction LLC<br>Sharjah, UAE<br>Oct 2024 to present<br><b class="live" id="curlong"></b></small></div>
+    <div>
+      <p style="margin:0;color:var(--mute)">One of the UAE’s leading automotive auction and vehicle trading companies, managing large-scale vehicle inventory and transactions.</p>
+      <h4>Financial and management accounting</h4>
+      <ul>
+        <li>Prepared 12 monthly reporting packs a year: P&amp;L, balance sheet and cash flow for management decisions.</li>
+        <li>Managed revenue recognition and reconciliations on AED 5M+ monthly revenue.</li>
+        <li>Led inventory costing and valuation across 700+ vehicles, keeping COGS and profitability accurate.</li>
+        <li>Ran month-end close: journals, accruals, prepayments, adjustments and GAAP/IFRS-compliant reporting.</li>
+        <li>Reconciled bank, credit card and POS accounts, including foreign currency differences.</li>
+      </ul>
+      <h4>Accounts payable, receivable and transactions</h4>
+      <ul>
+        <li>Handled 500+ invoices a month with timely billing and strong working capital control.</li>
+        <li>Owned AP end to end: invoice checks, vendor reconciliations, payment runs, aging and PDC schedules.</li>
+        <li>Processed 100+ customer deposits and refunds a month with accurate balances.</li>
+      </ul>
+      <h4>VAT and payroll</h4>
+      <ul>
+        <li>Managed UAE VAT to FTA rules: input/output reconciliation, calculation and returns, with working knowledge of corporate tax.</li>
+        <li>Coordinated payroll for 150+ employees under UAE Labour Law: WPS, advances, loans, leave settlement and gratuity.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="job panel tilt">
+    <div><h3>Assistant Accountant</h3><small>Accounts India<br>Kerala, India<br>2022 to 2024<br><b class="live">2 yrs approx.</b></small></div>
+    <ul>
+      <li>Kept daily financial records for multiple clients in line with accounting standards.</li>
+      <li>Issued invoices, receipts and payment reminders; tracked expenses and vendor payments.</li>
+      <li>Reconciled bank, credit card and petty cash accounts.</li>
+      <li>Prepared month-end reports, trial balances and financial summaries.</li>
+      <li>Advised clients on bookkeeping, internal controls and tax and payroll documentation.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Results</h2>
+  <div class="grid">
+    <div class="panel tilt"><strong>100%</strong><p>On-time quarterly UAE VAT filing, with zero VAT penalties.</p></div>
+    <div class="panel tilt"><strong>15–20%</strong><p>Reduction in accounts receivable through proactive collections.</p></div>
+    <div class="panel tilt"><strong>100%</strong><p>Documentation completeness for external audit readiness.</p></div>
+    <div class="panel tilt"><strong>0 errors</strong><p>WPS submissions for 150+ staff, paid on time.</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="panel tilt" style="margin-bottom:26px"><div class="bars">
+    <div class="bar" style="--w:92%"><b>MS Excel (advanced)<em style="font-style:normal;color:var(--mute)">VLOOKUP, XLOOKUP, Pivot</em></b><i></i></div>
+    <div class="bar" style="--w:88%"><b>Orison Financial ERP<em style="font-style:normal;color:var(--mute)">Proficient</em></b><i></i></div>
+    <div class="bar" style="--w:72%"><b>Tally Prime<em style="font-style:normal;color:var(--mute)">Intermediate</em></b><i></i></div>
+    <div class="bar" style="--w:70%"><b>Power BI<em style="font-style:normal;color:var(--mute)">Dashboards and reporting</em></b><i></i></div>
+    <div class="bar" style="--w:45%"><b>QuickBooks<em style="font-style:normal;color:var(--mute)">Basic</em></b><i></i></div>
+  </div></div>
+  <div class="tags">
+    <span>Accounts payable and receivable</span><span>Financial accounting and MIS</span><span>General ledger and month-end close</span><span>Budgeting and forecasting support</span><span>Job costing and project accounting</span><span>Bank reconciliation</span><span>Internal controls and audit readiness</span><span>Record to report</span><span>Cash flow and working capital</span><span>WPS payroll and gratuity</span><span>Fixed assets and depreciation</span><span>Inventory costing</span>
+  </div>
+  <h3>Education and certification</h3>
+  <div class="grid">
+    <div class="panel tilt"><strong style="font-size:1.8rem">CMA (USA)</strong><p>Institute of Management Accountants, Parts 1 and 2 certified, 2022 to 2024.</p></div>
+    <div class="panel tilt"><strong style="font-size:1.8rem">B.Com Finance</strong><p>University of Calicut, Kerala, India, 2019 to 2022.</p></div>
+    <div class="panel tilt"><strong style="font-size:1.8rem">Languages</strong><p>English (professional), Malayalam (native), Hindi (basic).</p></div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <h2>Let’s talk numbers</h2>
+  <p>Dubai, UAE · open to finance and accounting roles</p>
+  <div class="ct">
+    <a class="cc tilt" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamedadilshan.cma@gmail.com&amp;su=Hello%20Mohamed%20-%20Opportunity&amp;body=Hi%20Mohamed%2C%0A%0A" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>Gmail</b><span>mohamedadilshan.cma@gmail.com</span><em>Tap to write an email</em></a>
+    <a class="cc tilt" href="tel:+971547896689"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><b>Call</b><span>+971 54 789 6689</span><em>Tap to call</em></a>
+    <a class="cc tilt" href="https://wa.me/971547896689" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-2-2-1-1 .5c-1-.5-1.5-1-2-2l.5-1-1-2z"/></svg><b>WhatsApp</b><span>+971 54 789 6689</span><em>Tap to chat</em></a>
+  </div>
+</footer>
+<a class="fab" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamedadilshan.cma@gmail.com&amp;su=Hello%20Mohamed%20-%20Opportunity&amp;body=Hi%20Mohamed%2C%0A%0A" target="_blank" rel="noopener" aria-label="Email Mohamed on Gmail"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- scroll reveals + progress bar
+  var rvEls=document.querySelectorAll('.panel:not(.photo),.tags span,section h2,footer h2');
+  rvEls.forEach(function(e){e.classList.add('rv')});
+  var rio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var d=x.target.classList.contains('tags')||x.target.parentElement.classList.contains('tags')?[].indexOf.call(x.target.parentElement.children,x.target)*45:0;setTimeout(function(){x.target.classList.add('in')},d);rio.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  rvEls.forEach(function(e){rio.observe(e)});
+  var prog=document.getElementById('prog');
+  addEventListener('scroll',function(){prog.style.transform='scaleX('+(scrollY/Math.max(1,document.body.scrollHeight-innerHeight))+')'},{passive:true});
+  // ---- auto-calculated experience (edit these two dates to update everything)
+  var CAREER_START=new Date(2022,0,1), CURRENT_START=new Date(2024,9,1);
+  function span(a,b){var m=(b.getFullYear()-a.getFullYear())*12+b.getMonth()-a.getMonth();return{y:Math.floor(m/12),m:m%12}}
+  var now0=new Date(),tot=span(CAREER_START,now0),cur=span(CURRENT_START,now0);
+  var te=document.getElementById('exp');te.dataset.n=tot.y;te.dataset.s='y '+tot.m+'m';
+  var ce=document.getElementById('cur');ce.dataset.n=cur.y;ce.dataset.s='y '+cur.m+'m';
+  var cl=document.getElementById('curlong');if(cl)cl.textContent=cur.y+' yrs '+cur.m+' mos so far';
+  // ---- profile photo: PHOTO = permanent photo for everyone; otherwise the owner can add one here
+  var PHOTO='';
+  var pimg=document.getElementById('pimg'),pini=document.getElementById('pini'),pf=document.getElementById('pfile'),pb=document.getElementById('photo');
+  function showPhoto(src){pimg.src=src;pimg.hidden=false;pini.hidden=true}
+  var saved='';try{saved=localStorage.getItem('adilshan-photo')||''}catch(e){}
+  (function(){var t=new Image();t.onload=function(){showPhoto('photo.jpg');var hn=document.getElementById('phint');if(hn)hn.hidden=true};t.src='photo.jpg'})();
+  if(PHOTO)showPhoto(PHOTO);else if(saved)showPhoto(saved);
+  if(!PHOTO){
+    pb.addEventListener('click',function(){pf.click()});
+    pb.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pf.click()}});
+    pf.addEventListener('change',function(){var f=pf.files[0];if(!f)return;var im=new Image(),u=URL.createObjectURL(f);
+      im.onload=function(){var s=Math.min(im.width,im.height),c=document.createElement('canvas');c.width=c.height=480;
+        c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,480,480);var d=c.toDataURL('image/jpeg',.85);showPhoto(d);try{localStorage.setItem('adilshan-photo',d)}catch(e){}URL.revokeObjectURL(u)};
+      im.src=u});
+  } else document.getElementById('phint').hidden=true;
+  // ---- cursor glow + panel spotlight
+  var glow=document.getElementById('cur-glow');
+  addEventListener('pointermove',function(e){if(glow&&!reduce)glow.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
+    var p=e.target.closest&&e.target.closest('.panel');if(p){var r=p.getBoundingClientRect();p.style.setProperty('--mx',(e.clientX-r.left)+'px');p.style.setProperty('--my',(e.clientY-r.top)+'px')}});
+
+  // counters
+  document.querySelectorAll('[data-n]').forEach(function(el){
+    var n=+el.dataset.n,s=el.dataset.s||'',t0=performance.now();
+    function f(t){var p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)}
+    reduce?el.textContent=n+s:requestAnimationFrame(f);
+  });
+  // skill bars
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.3});
+  document.querySelectorAll('.bar').forEach(function(b){io.observe(b)});
+  // card tilt
+  if(!reduce&&matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.tilt').forEach(function(c){
+      c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(900px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg) translateZ(6px)'});
+      c.addEventListener('mouseleave',function(){c.style.transform=''});
+    });
+  }
+  // 3D: glowing finance globe
+  try{
+  if(typeof THREE==='undefined')return;
+  var light=matchMedia('(prefers-color-scheme: light)').matches&&document.documentElement.dataset.theme!=='dark';
+  var BL=light?THREE.NormalBlending:THREE.AdditiveBlending;
+  var cv=document.getElementById('gl'),R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+  R.setPixelRatio(Math.min(devicePixelRatio,2));
+  var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(45,1,.1,100);C.position.set(0,0,11);
+  S.add(new THREE.AmbientLight(0xffffff,.8));
+  var L=new THREE.PointLight(0xffffff,1.4);L.position.set(5,5,8);S.add(L);
+  function tex(draw,s){var c=document.createElement('canvas');c.width=c.height=s||128;draw(c.getContext('2d'),c.width);return new THREE.CanvasTexture(c)}
+  var dot=tex(function(g,s){var r=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.25,'rgba(255,255,255,.6)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,s,s)});
+  var G=new THREE.Group();S.add(G);
+  var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:dot,color:0x3fc3ad,transparent:true,opacity:light?.35:.55,blending:BL,depthWrite:false}));halo.scale.set(11,11,1);G.add(halo);
+  var halo2=new THREE.Sprite(new THREE.SpriteMaterial({map:dot,color:0xe7c875,transparent:true,opacity:light?.25:.35,blending:BL,depthWrite:false}));halo2.scale.set(5,5,1);G.add(halo2);
+  var core=new THREE.Mesh(new THREE.IcosahedronGeometry(1.9,2),new THREE.MeshBasicMaterial({color:0x5fe3cc,wireframe:true,transparent:true,opacity:.45,blending:BL,depthWrite:false}));G.add(core);
+  var inner=new THREE.Mesh(new THREE.OctahedronGeometry(1.1,0),new THREE.MeshStandardMaterial({color:0xe7d9b8,metalness:.7,roughness:.25,flatShading:true}));G.add(inner);
+  var rings=[];
+  [[2.7,.03,0],[3.3,.022,1.1],[3.9,.016,2.1]].forEach(function(p,k){
+    var r=new THREE.Mesh(new THREE.TorusGeometry(p[0],p[1],8,200),new THREE.MeshBasicMaterial({color:k==1?0xe7c875:0x3fc3ad,transparent:true,opacity:.85,blending:BL,depthWrite:false}));
+    r.rotation.set(p[2]+.6,k*.8,0);G.add(r);rings.push(r)});
+  var face=tex(function(g,s){g.fillStyle='#d8b45a';g.fillRect(0,0,s,s);g.strokeStyle='#8a6a1d';g.lineWidth=6;g.beginPath();g.arc(s/2,s/2,s*.42,0,7);g.stroke();g.fillStyle='#6b4f10';g.font='bold '+(s*.3)+'px Manrope,sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText('AED',s/2,s/2+4)},256);
+  var edge=new THREE.MeshStandardMaterial({color:0xb8923a,metalness:.9,roughness:.3}),fm=new THREE.MeshStandardMaterial({map:face,metalness:.8,roughness:.3});
+  var coins=[],cg=new THREE.CylinderGeometry(.38,.38,.08,40);
+  for(var i=0;i<16;i++){var c=new THREE.Mesh(cg,[edge,fm,fm]);c.userData={a:i/16*Math.PI*2,r:2.9+(i%3)*.55,t:.14+(i%3)*.05,y:(i%5-2)*.4};G.add(c);coins.push(c)}
+  var n=1400,pos=new Float32Array(n*3);
+  for(var i=0;i<n;i++){var u=Math.random()*Math.PI*2,v=Math.acos(2*Math.random()-1),r=4.2+Math.pow(Math.random(),1.6)*3;pos[i*3]=r*Math.sin(v)*Math.cos(u);pos[i*3+1]=r*Math.cos(v);pos[i*3+2]=r*Math.sin(v)*Math.sin(u)}
+  var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  var pts=new THREE.Points(pg,new THREE.PointsMaterial({map:dot,color:light?0x0b7d6c:0x8ff0dc,size:.16,transparent:true,opacity:.9,blending:BL,depthWrite:false}));G.add(pts);
+  var mx=0,my=0,sc=0,tx=0,ty=0;
+  addEventListener('mousemove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+  addEventListener('scroll',function(){sc=scrollY/Math.max(1,document.body.scrollHeight-innerHeight)});
+  function rs(){var w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();var wide=w>860;G.userData.x=wide?-4.2:0;G.userData.y=wide?0:3.2;G.userData.s=wide?1:.7}
+  addEventListener('resize',rs);rs();
+  var t0=performance.now();
+  function loop(now){
+    var t=reduce?4:(now-t0)/1000,k=reduce?1:Math.min(1,t/2.2),e=1-Math.pow(1-k,4);
+    tx+=(mx-tx)*.05;ty+=(my-ty)*.05;
+    G.scale.setScalar(G.userData.s*(.2+.8*e)*(1+.03*Math.sin(t*1.5)));
+    G.position.x=G.userData.x+Math.sin(sc*Math.PI*2)*1.2;G.position.y=G.userData.y-sc*3;
+    G.rotation.y=t*.15+tx*1.1+sc*2;G.rotation.x=ty*.6;
+    core.rotation.y=-t*.3;core.rotation.x=t*.1;inner.rotation.set(t*.4,t*.5,0);
+    rings.forEach(function(r,i){r.rotation.z=t*(.25+i*.1)*(i%2?-1:1)});
+    coins.forEach(function(c){var u=c.userData,a=u.a+t*u.t;c.position.set(Math.cos(a)*u.r,u.y+Math.sin(t+u.a)*.35,Math.sin(a)*u.r);c.rotation.set(t*1.3+u.a,0,t*.7)});
+    pts.rotation.y=t*.04;pts.rotation.x=t*.015;
+    C.position.z=11-sc*1.5;
+    R.render(S,C);
+    if(!reduce)requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+  if(reduce)addEventListener('scroll',function(){loop(performance.now())});
+  }catch(err){console.warn('3D unavailable',err)}
+})();
+</script>
+</body>
+</html>
